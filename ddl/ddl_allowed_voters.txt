@@ -14,4 +14,4 @@ INSERT INTO allowedVoters VALUES (5, 1);
 INSERT INTO allowedVoters VALUES (6, 0);
 INSERT INTO allowedVoters VALUES (7, 0);
 INSERT INTO allowedVoters VALUES (8, 1);
-INSERT INTO allowedVoters VALUES (9, 0);
+INSERT INTO allowedVoters VALUES (9, 1);

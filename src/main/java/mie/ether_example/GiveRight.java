@@ -79,5 +79,25 @@ public class GiveRight implements JavaDelegate {
 				EtherUtils.reportTransaction("Gave voting right to" + credentials.getAddress(), transactionReceipt);
 			}
 		}
+		
+
+		// Check if account 9 is allowed to vote and then delegate its vote to account 5
+		if (allowedVoters.getOrDefault(9, 0) == 1) {
+		    Credentials credentials9 = accounts.get(9).getCredentials();
+		    Credentials credentials5 = accounts.get(5).getCredentials();
+		    Address accountAddress5 = new Address(credentials5.getAddress());
+		    TransactionReceipt transactionReceipt = null;
+		    try {
+		        Ballot employeeBallot = Ballot.load(contractAddress, web3, credentials9, EtherUtils.GAS_PRICE, EtherUtils.GAS_LIMIT_CONTRACT_TX);
+		        transactionReceipt = employeeBallot.delegate(accountAddress5).get();
+		        EtherUtils.reportTransaction("Person 9 delegated vote to Person 5", transactionReceipt);
+		    } catch (InterruptedException | ExecutionException e) {
+		        e.printStackTrace();
+		    }
+		}
+
+		// ... [rest of the code]
+
+		
 	}
 }

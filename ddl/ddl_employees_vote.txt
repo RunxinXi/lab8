@@ -7,7 +7,7 @@ vote int);
 INSERT INTO Employees_Vote VALUES (1, 1);
 INSERT INTO Employees_Vote VALUES (2, 2);
 INSERT INTO Employees_Vote VALUES (3, 1);
-INSERT INTO Employees_Vote VALUES (7, 2);
 INSERT INTO Employees_Vote VALUES (4, 3);
-INSERT INTO Employees_Vote VALUES (5, 3);
+INSERT INTO Employees_Vote VALUES (5, 3); // Assuming account 9 delegates to account 5
 INSERT INTO Employees_Vote VALUES (6, 3);
+

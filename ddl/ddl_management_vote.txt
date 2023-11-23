@@ -4,11 +4,9 @@ CREATE TABLE IF NOT EXISTS Management_Vote (
 account int,
 vote int);
 
-
 INSERT INTO Management_Vote VALUES (4, 1);
 INSERT INTO Management_Vote VALUES (5, 2);
 INSERT INTO Management_Vote VALUES (6, 1);
-INSERT INTO Management_Vote VALUES (8, 2);
-INSERT INTO Management_Vote VALUES (7, 3);
+INSERT INTO Management_Vote VALUES (7, 2);
 INSERT INTO Management_Vote VALUES (8, 3);
-INSERT INTO Management_Vote VALUES (9, 3);
+INSERT INTO Management_Vote VALUES (9, 3); 
