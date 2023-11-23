@@ -1,0 +1,9 @@
+DROP TABLE IF EXISTS Employees_Vote;
+
+CREATE TABLE IF NOT EXISTS Employees_Vote (
+account int,
+vote int);
+
+INSERT INTO Employees_Vote VALUES (1, 1);
+INSERT INTO Employees_Vote VALUES (2, 2);
+INSERT INTO Employees_Vote VALUES (3, 1);

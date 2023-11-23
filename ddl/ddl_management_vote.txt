@@ -1,0 +1,10 @@
+DROP TABLE IF EXISTS Management_Vote;
+
+CREATE TABLE IF NOT EXISTS Management_Vote (
+account int,
+vote int);
+
+
+INSERT INTO Management_Vote VALUES (4, 1);
+INSERT INTO Management_Vote VALUES (5, 2);
+INSERT INTO Management_Vote VALUES (6, 1);
