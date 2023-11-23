@@ -67,8 +67,8 @@ public class DeployContractServiceTask implements JavaDelegate{
 			e1.printStackTrace();
 		}
 
-			String strPropM1, strPropM2, strPropM3;
-			String strPropE1, strPropE2, strPropE3;
+			String strPropM1, strPropM2, strPropM3, strPropM4;
+			String strPropE1, strPropE2, strPropE3, strPropE4;
 		
 			String currentFromValue = (String) execution.getVariable("ProposalsFrom");
 			
@@ -79,13 +79,15 @@ public class DeployContractServiceTask implements JavaDelegate{
 				strPropM1 = (String) execution.getVariable("aProposalM1");
 				strPropM2 = (String) execution.getVariable("aProposalM2");
 				strPropM3 = (String) execution.getVariable("aProposalM3");
+				strPropM4 = (String) execution.getVariable("aProposalM4");
 				
 				// encode proposal name using Byte32
 				Bytes32 propM1 = EtherUtils.stringToBytes32(strPropM1);
 				Bytes32 propM2 = EtherUtils.stringToBytes32(strPropM2);
 				Bytes32 propM3 = EtherUtils.stringToBytes32(strPropM3);
+				Bytes32 propM4 = EtherUtils.stringToBytes32(strPropM4);
 				
-				DynamicArray<Bytes32> proposals = new DynamicArray<Bytes32>(propM1, propM2, propM3);
+				DynamicArray<Bytes32> proposals = new DynamicArray<Bytes32>(propM1, propM2, propM3,propM4);
 							
 				// deploy new contract, send proposal names to constructor
 				Ballot myBallot = null;
@@ -111,13 +113,14 @@ public class DeployContractServiceTask implements JavaDelegate{
 				strPropE1 = (String) execution.getVariable("aProposalE1");
 				strPropE2 = (String) execution.getVariable("aProposalE2");
 				strPropE3 = (String) execution.getVariable("aProposalE3");
+				strPropE4 = (String) execution.getVariable("aProposalE4");
 				
 				// encode proposal name using Byte32
 				Bytes32 propE1 = EtherUtils.stringToBytes32(strPropE1);
 				Bytes32 propE2 = EtherUtils.stringToBytes32(strPropE2);
 				Bytes32 propE3 = EtherUtils.stringToBytes32(strPropE3);
-				
-				DynamicArray<Bytes32> proposals = new DynamicArray<Bytes32>(propE1, propE2, propE3);
+				Bytes32 propE4 = EtherUtils.stringToBytes32(strPropE4);
+				DynamicArray<Bytes32> proposals = new DynamicArray<Bytes32>(propE1, propE2, propE3,propE4);
 							
 				// deploy new contract, send proposal names to constructor
 				Ballot myBallot = null;
@@ -143,22 +146,24 @@ public class DeployContractServiceTask implements JavaDelegate{
 				strPropM1 = (String) execution.getVariable("aProposalM1");
 				strPropM2 = (String) execution.getVariable("aProposalM2");
 				strPropM3 = (String) execution.getVariable("aProposalM3");
+				strPropM4 = (String) execution.getVariable("aProposalM4");
 	
 				// read proposal names from Employees
 				strPropE1 = (String) execution.getVariable("aProposalE1");
 				strPropE2 = (String) execution.getVariable("aProposalE2");
 				strPropE3 = (String) execution.getVariable("aProposalE3");
-				
+				strPropE4 = (String) execution.getVariable("aProposalE4");
 				// encode proposal name using Byte32
 				Bytes32 propM1 = EtherUtils.stringToBytes32(strPropM1);
 				Bytes32 propM2 = EtherUtils.stringToBytes32(strPropM2);
 				Bytes32 propM3 = EtherUtils.stringToBytes32(strPropM3);
+				Bytes32 propM4 = EtherUtils.stringToBytes32(strPropM4);
 				
 				Bytes32 propE1 = EtherUtils.stringToBytes32(strPropE1);
 				Bytes32 propE2 = EtherUtils.stringToBytes32(strPropE2);
 				Bytes32 propE3 = EtherUtils.stringToBytes32(strPropE3);
-				
-				DynamicArray<Bytes32> proposals = new DynamicArray<Bytes32>(propM1, propM2, propM3, propE1, propE2, propE3);
+				Bytes32 propE4 = EtherUtils.stringToBytes32(strPropE4);
+				DynamicArray<Bytes32> proposals = new DynamicArray<Bytes32>(propM1, propM2, propM3,propM4, propE1, propE2, propE3,propE4);
 							
 				// deploy new contract, send proposal names to constructor
 				Ballot myBallot = null;

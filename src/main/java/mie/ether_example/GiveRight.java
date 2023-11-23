@@ -1,6 +1,12 @@
 package mie.ether_example;
 
+import java.sql.ResultSet;
 import java.util.HashMap;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.ResultSet;
+import java.sql.Statement;
+
 
 import java.util.Map.Entry;
 import java.util.concurrent.ExecutionException;
@@ -31,12 +37,36 @@ public class GiveRight implements JavaDelegate {
 				EtherUtils.GAS_LIMIT_CONTRACT_TX);
 
 		// TODO: create a HashMap of allowed voters
+		// Database connection details
+		String url = "jdbc:your_database_url"; // Replace with your database URL
+		String user = "username"; // Replace with your database username
+		String password = "password"; // Replace with your database password
+
+		// Load the list of allowed voters from the database
+		HashMap<Integer, Integer> allowedVoters = new HashMap<>();
+		try {
+		    Connection conn = DriverManager.getConnection(url, user, password);
+		    Statement stmt = conn.createStatement();
+		    ResultSet rs = stmt.executeQuery("SELECT account, allowed FROM allowedVoters");
+
+		    while (rs.next()) {
+		        allowedVoters.put(rs.getInt("account"), rs.getInt("allowed"));
+		    }
+
+		    rs.close();
+		    stmt.close();
+		    conn.close();
+		} catch (Exception e) {
+		    e.printStackTrace();
+		}
+
+		
 
 		// iterate over the accounts
 		for (Entry<Integer, EtherAccount> accountEntry : accounts.entrySet()) {
 			// if the account is not the company account (number 0),
 			// give voting right to the blockchain address of the account
-			if (accountEntry.getKey() != 0) {
+			if (allowedVoters.getOrDefault(accountEntry.getKey(), 0) == 1) {
 				Credentials credentials = accountEntry.getValue().getCredentials();
 				Address accountAddress = new Address(credentials.getAddress());
 				TransactionReceipt transactionReceipt = null;

@@ -36,6 +36,7 @@ public class BallotUnitTest extends LabBaseUnitTest {
 		formEntries.put("aProposalM1", "Mamagement First Proposal");
 		formEntries.put("aProposalM2", "Management Second Proposal");
 		formEntries.put("aProposalM3", "Management Third Proposal");
+		formEntries.put("aProposalM4", "Management Fourth Proposal");
 		
 		// get the user task (collect proposals)
 		TaskService taskService = flowableContext.getTaskService();
@@ -51,7 +52,7 @@ public class BallotUnitTest extends LabBaseUnitTest {
 		
 		// build a list of required fields that must be filled
 		List<String> requiredFields = new ArrayList<>(
-				Arrays.asList("aProposalM1", "aProposalM2", "aProposalM3"));
+				Arrays.asList("aProposalM1", "aProposalM2", "aProposalM3","aProposalM4"));
 		
 		// make sure that each of the required fields is in the form
 		for (String requiredFieldName : requiredFields) {
@@ -74,6 +75,7 @@ public class BallotUnitTest extends LabBaseUnitTest {
 		formEntries.put("aProposalE1", "Employee First Proposal");
 		formEntries.put("aProposalE2", "Employee Second Proposal");
 		formEntries.put("aProposalE3", "Employee Third Proposal");
+		formEntries.put("aProposalE4", "Employee Fourth Proposal");
 		
 		// get the user task (collect proposals)
 		TaskService taskService = flowableContext.getTaskService();
@@ -89,7 +91,7 @@ public class BallotUnitTest extends LabBaseUnitTest {
 		
 		// build a list of required fields that must be filled
 		List<String> requiredFields = new ArrayList<>(
-				Arrays.asList("aProposalE1", "aProposalE2", "aProposalE3"));
+				Arrays.asList("aProposalE1", "aProposalE2", "aProposalE3","aProposalE4"));
 		
 		// make sure that each of the required fields is in the form
 		for (String requiredFieldName : requiredFields) {

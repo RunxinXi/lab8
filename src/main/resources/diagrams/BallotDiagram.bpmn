@@ -33,6 +33,7 @@
         <activiti:formProperty id="aProposalM1" name="ProposalM1"></activiti:formProperty>
         <activiti:formProperty id="aProposalM2" name="ProposalM2"></activiti:formProperty>
         <activiti:formProperty id="aProposalM3" name="ProposalM3"></activiti:formProperty>
+        <activiti:formProperty id="aProposalM4" name="ProposalM4"></activiti:formProperty>
       </extensionElements>
     </userTask>
     <serviceTask id="servicetask2" name="Deploy ballot contract" activiti:class="mie.ether_example.DeployContractServiceTask"></serviceTask>
@@ -53,6 +54,7 @@
         <activiti:formProperty id="aProposalE1" name="ProposalE1"></activiti:formProperty>
         <activiti:formProperty id="aProposalE2" name="ProposalE2"></activiti:formProperty>
         <activiti:formProperty id="aProposalE3" name="ProposalE3"></activiti:formProperty>
+        <activiti:formProperty id="aProposalE4" name="ProposalE4"></activiti:formProperty>
       </extensionElements>
     </userTask>
     <sequenceFlow id="flow10" sourceRef="servicetask1" targetRef="inclusivegateway1"></sequenceFlow>
